@@ -1,4 +1,8 @@
-# LiquidJournal Engineering Study
+# Trading Journal Workspace & Engineering Study
+
+มีโครงแอป Next.js แล้ว: `npm ci` → `npm run dev` → เปิด http://localhost:3000/dashboard
+
+[วิธีรันและโครงสร้างโค้ด](docs/workspace-development.md) · ยังเป็นเดโม่ ไม่มี login หรือ broker connection
 
 รายการวิเคราะห์ LiquidJournal สำหรับศึกษาแนวทางสร้าง trading journal ของตนเอง ตรวจวันที่ 29 ตุลาคม 2026
 

@@ -1,0 +1,33 @@
+{
+  "name": "journal-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1 --port 3000",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1 --port 3000",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.mjs dashboard/*.test.mjs",
+    "format": "prettier --write src tests dashboard package.json tsconfig.json postcss.config.mjs .prettierrc.json README.md docs/workspace-development.md",
+    "format:check": "prettier --check src tests dashboard package.json tsconfig.json postcss.config.mjs .prettierrc.json README.md docs/workspace-development.md"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.90.0",
+    "lucide-react": "^0.468.0",
+    "motion": "14.7.1",
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "recharts": "3.10.1",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "prettier": "3.9.10",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.9.0"
+  }
+}

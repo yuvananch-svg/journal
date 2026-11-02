@@ -474,3 +474,11 @@ Do not assert official refresh interval, SLA, redistribution rights, API license
 ## DNEWS8 — Unknowns and verification required
 
 Liquid upstream endpoint/provider, server refresh TTL, cache layer, historical week storage, event ID algorithm, edits/revisions, actual results, API policy/license, latency and failover remain unknown. Browser code alone cannot establish cron, Redis, Supabase storage, HTML scraping, background workers or real-time publication. Runtime evidence not captured for the data response; all Liquid network behavior here is inferred from shipped implementation, not live packet observation.
+
+## Dashboard motion — recheck 2026-10-29
+
+- **Observed DOM/CSS:** Live dashboard `.dash-arrive`: 460ms; starts opacity 0, translateY(10px), scale(.994). Hero delay40ms, performance150ms, chart group250ms, subsequent groups340/420ms. Heading `.dash-write`:620ms with left-to-right clip reveal; title/date delays90/240ms. These are browser observations, not inferred from generic animation libraries.
+- **Public shipped JS:** `3g53kuvt7n6dl.js`: Recharts Area type `monotone`, duration1100ms, ease-out, strokeWidth2. Weekly bars duration460ms with250+30*i ms delay.
+- **Public shipped JS:** `0qz1takd-ytx9.js`, module420239: count-up defaults4000ms, starts at half target, quadratic ease-out with requestAnimationFrame and cancellation; respects reduced motion.
+- **Reconstruction choices:** local `dashboard/curve.mjs` implements monotone cubic interpolation without dependencies. `motion.mjs` uses browser Web Animations API for entrance/reveal, and cancellable rAF for money. It recreates observed behavior, not recovered source. Local chart uses clip reveal rather than reproducing Recharts internals. Extra notice/sidebar timing is a design choice. Full page navigation is outside this dashboard-only demo.
+- **Validation:** curve endpoint/sparse-data and segment-bound tests; existing metric tests; browser checked all-time and week scope, observed curved SVG C commands and correct settled values. No measured FPS claim. No account values captured in this report.
